@@ -9,6 +9,9 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: e8b88cf879fc378ac512a3f41044145a39b32adc
+    - name: Install dependencies
+        sudo add-apt-repository ppa:reactos/rosbe-unix
+        sudo apt install rosbe-unix
     - name: Build C Code
       run: |
         configure.cmd
