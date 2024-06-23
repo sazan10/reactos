@@ -1,0 +1,16 @@
+name: Linux Build
+on: push
+jobs:
+  build:
+    name: Build on Ubuntu
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        ref: e8b88cf879fc378ac512a3f41044145a39b32adc
+    - name: Build C Code
+      run: |
+        configure.cmd
+        cd output-MinGW-i386
+        ninja bootcd livecd
