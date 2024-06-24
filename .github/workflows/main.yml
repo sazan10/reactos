@@ -15,7 +15,5 @@ jobs:
         sudo apt-get install -y git cmake make ninja-build gcc g++ python3 gawk bison flex libssl-dev libmpfr-dev libmpc-dev libgmp-dev texinfo wget unzip
         sudo add-apt-repository ppa:reactos/rosbe-unix
         sudo apt install rosbe-unix
-        ./configure.sh
-        cd output-MinGW-i386
-        ninja bootcd livecd
+   
 
