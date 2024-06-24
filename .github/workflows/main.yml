@@ -13,13 +13,9 @@ jobs:
       run: |  
         sudo apt-get update
         sudo apt-get install -y git cmake make ninja-build gcc g++ python3 gawk bison flex libssl-dev libmpfr-dev libmpc-dev libgmp-dev texinfo wget unzip
-        wget https://github.com/reactos/RosBE/archive/refs/heads/master.zip -O rosbe.zip
-        unzip rosbe.zip
-        cd RosBE-master
-        sudo ./ninja.sh install
-        cd ..
-        mkdir build
-        cd build
-        cmake .. -G Ninja
-        ninja
+        sudo add-apt-repository ppa:reactos/rosbe-unix
+        sudo apt install rosbe-unix
+        ./configure.sh
+        cd output-MinGW-i386
+        ninja bootcd livecd
 
